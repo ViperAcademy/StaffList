@@ -104,11 +104,23 @@ public class sl extends Command {
         msgMods.removeComponent(msgMods.getCursor());
         msgHelpers.removeComponent(msgHelpers.getCursor());
 
-        commandSender.sendMessage(new ComponentBuilder("Staffer Online").color(ChatColor.GOLD).color(ChatColor.BOLD).create());
-        commandSender.sendMessage(msgOwners.create());
-        commandSender.sendMessage(msgAdmins.create());
-        commandSender.sendMessage(msgSrMods.create());
-        commandSender.sendMessage(msgMods.create());
-        commandSender.sendMessage(msgHelpers.create());
+        ComponentBuilder init = new ComponentBuilder("Staffer Online").color(ChatColor.GOLD).bold(true);
+        if(!(Owners == 0 && Admins == 0 && SrMods == 0 && Mods == 0 && Helpers == 0))
+            commandSender.sendMessage(init.create());
+        if(Owners != 0)
+            commandSender.sendMessage(msgOwners.create());
+        if(Admins != 0)
+            commandSender.sendMessage(msgAdmins.create());
+        if(SrMods != 0)
+            commandSender.sendMessage(msgSrMods.create());
+        if(Mods != 0)
+            commandSender.sendMessage(msgMods.create());
+        if(Helpers != 0)
+            commandSender.sendMessage(msgHelpers.create());
+
+        if(Owners == 0 && Admins == 0 && SrMods == 0 && Mods == 0 && Helpers == 0){
+            ComponentBuilder noStaff = new ComponentBuilder("Attualmente non ci sono staffers online").color(ChatColor.RED);
+            commandSender.sendMessage(noStaff.create());
+        }
     }
 }
