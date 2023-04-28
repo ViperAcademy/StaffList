@@ -69,11 +69,17 @@ public class sl extends Command {
             }
         }
 
-        msgOwners.append(Integer.toString(Owners)).color(ChatColor.WHITE).append(")  ▪ ").color(ChatColor.GRAY);
-        msgAdmins.append(Integer.toString(Admins)).color(ChatColor.WHITE).append(")  ▪ ").color(ChatColor.GRAY);
-        msgSrMods.append(Integer.toString(SrMods)).color(ChatColor.WHITE).append(")  ▪ ").color(ChatColor.GRAY);
-        msgMods.append(Integer.toString(Mods)).color(ChatColor.WHITE).append(")  ▪ ").color(ChatColor.GRAY);
-        msgHelpers.append(Integer.toString(Helpers)).color(ChatColor.WHITE).append(")  ▪ ").color(ChatColor.GRAY);
+        msgOwners.append(Integer.toString(Owners)).color(ChatColor.WHITE).append(")  ").color(ChatColor.GRAY);
+        msgAdmins.append(Integer.toString(Admins)).color(ChatColor.WHITE).append(")  ").color(ChatColor.GRAY);
+        msgSrMods.append(Integer.toString(SrMods)).color(ChatColor.WHITE).append(")  ").color(ChatColor.GRAY);
+        msgMods.append(Integer.toString(Mods)).color(ChatColor.WHITE).append(")  ").color(ChatColor.GRAY);
+        msgHelpers.append(Integer.toString(Helpers)).color(ChatColor.WHITE).append(")  ").color(ChatColor.GRAY);
+
+        msgOwners.append("▪ ").color(ChatColor.GRAY);
+        msgAdmins.append("▪ ").color(ChatColor.GRAY);
+        msgSrMods.append("▪ ").color(ChatColor.GRAY);
+        msgMods.append("▪ ").color(ChatColor.GRAY);
+        msgHelpers.append("▪ ").color(ChatColor.GRAY);
 
         for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
             if (p.hasPermission("StaffList.Owner")) {
