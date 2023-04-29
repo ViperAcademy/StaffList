@@ -51,20 +51,22 @@ public class sl extends Command {
         int Mods = 0;
         int Helpers = 0;
 
+        List<ProxiedPlayer> vanished = StaffList.getVanishedPlayers();
+
         for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
-            if (p.hasPermission("StaffList.Owner")) {
+            if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
                 Owners++;
             }
             if (p.hasPermission("StaffList.Admin")) {
                 Admins++;
             }
-            if (p.hasPermission("StaffList.SrMod")) {
+            if (p.hasPermission("StaffList.SrMod") && !(vanished.contains(p))) {
                 SrMods++;
             }
-            if (p.hasPermission("StaffList.Mod")) {
+            if (p.hasPermission("StaffList.Mod") && !(vanished.contains(p))) {
                 Mods++;
             }
-            if (p.hasPermission("StaffList.Helper")) {
+            if (p.hasPermission("StaffList.Helper") && !(vanished.contains(p))) {
                 Helpers++;
             }
         }
@@ -82,19 +84,19 @@ public class sl extends Command {
         msgHelpers.append("▪ ").color(ChatColor.GRAY);
 
         for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
-            if (p.hasPermission("StaffList.Owner")) {
+            if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
                 msgOwners.append(p.getName()).color(ChatColor.WHITE).append(", ");
             }
-            if (p.hasPermission("StaffList.Admin")) {
+            if (p.hasPermission("StaffList.Admin") && !(vanished.contains(p))) {
                 msgAdmins.append(p.getName()).color(ChatColor.WHITE).append(", ");
             }
-            if (p.hasPermission("StaffList.SrMod")) {
+            if (p.hasPermission("StaffList.SrMod") && !(vanished.contains(p))) {
                 msgSrMods.append(p.getName()).color(ChatColor.WHITE).append(", ");
             }
-            if (p.hasPermission("StaffList.Mod")) {
+            if (p.hasPermission("StaffList.Mod") && !(vanished.contains(p))) {
                 msgMods.append(p.getName()).color(ChatColor.WHITE).append(", ");
             }
-            if (p.hasPermission("StaffList.Helper")) {
+            if (p.hasPermission("StaffList.Helper") && !(vanished.contains(p))) {
                 msgHelpers.append(p.getName()).color(ChatColor.WHITE).append(", ");
             }
         }

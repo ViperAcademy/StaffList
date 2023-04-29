@@ -13,6 +13,11 @@ public final class StaffList extends Plugin {
     public static void addVanishedPlayer(ProxiedPlayer p){
         vanished.add(p);
     }
+
+    public static List<ProxiedPlayer> getVanishedPlayers(){
+        return vanished;
+    }
+
     @Override
     public void onEnable() {
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new sl (this));
