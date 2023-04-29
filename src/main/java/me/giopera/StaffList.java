@@ -15,6 +15,7 @@ public final class StaffList extends Plugin {
     @Override
     public void onEnable() {
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new sl (this));
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new slvanish (this));
         getLogger().info("StaffList Avviato con successo");
     }
 
