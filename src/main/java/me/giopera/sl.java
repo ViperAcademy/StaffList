@@ -1,12 +1,7 @@
 package me.giopera;
 
-import com.google.common.collect.Lists;
 
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 import net.md_5.bungee.api.ChatColor;
@@ -15,9 +10,6 @@ import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
-import net.md_5.bungee.api.plugin.Command;
-import net.md_5.bungee.api.scheduler.GroupedThreadFactory;
-import net.md_5.bungee.command.PlayerCommand;
 
 
 public class sl extends Command {
@@ -106,7 +98,7 @@ public class sl extends Command {
         msgMods.removeComponent(msgMods.getCursor());
         msgHelpers.removeComponent(msgHelpers.getCursor());
 
-        ComponentBuilder init = new ComponentBuilder("Staffer Online").color(ChatColor.GOLD).bold(true);
+        ComponentBuilder init = new ComponentBuilder("Staffer Online").color(ChatColor.GOLD).bold(true).append("(").color(ChatColor.GRAY).append(Integer.toString(Owners+Admins+SrMods+Mods+Helpers)).color(ChatColor.WHITE).append(")").color(ChatColor.GRAY);
         if(!(Owners == 0 && Admins == 0 && SrMods == 0 && Mods == 0 && Helpers == 0))
             commandSender.sendMessage(init.create());
         if(Owners != 0)
