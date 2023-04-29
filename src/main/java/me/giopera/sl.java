@@ -57,7 +57,7 @@ public class sl extends Command {
             if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
                 Owners++;
             }
-            if (p.hasPermission("StaffList.Admin")) {
+            if (p.hasPermission("StaffList.Admin") && !(vanished.contains(p))) {
                 Admins++;
             }
             if (p.hasPermission("StaffList.SrMod") && !(vanished.contains(p))) {
