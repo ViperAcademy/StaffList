@@ -10,11 +10,13 @@ import java.util.List;
 public final class StaffList extends Plugin {
 
     public static List<ProxiedPlayer> vanished = new ArrayList<>();
-    public static void toggleVanish(ProxiedPlayer p){
-        if(vanished.contains(p))
+    public static boolean toggleVanish(ProxiedPlayer p){
+        if(vanished.contains(p)) {
             vanished.remove(p);
-        else {
+            return false;
+        } else {
             vanished.add(p);
+            return true;
         }
     }
 

@@ -19,15 +19,23 @@ public class slvanish extends Command {
                 ComponentBuilder err = new ComponentBuilder("Errore, il player non risulta essere online nel server proxy!").color(ChatColor.DARK_RED).bold(true);
                 commandSender.sendMessage(err.create());
             } else {
-                StaffList.toggleVanish(ProxyServer.getInstance().getPlayer(strings[1]));
-                ComponentBuilder confirm = new ComponentBuilder("Hai attivato la vanish per " + strings[0]).color(ChatColor.GREEN).bold(true);
-                commandSender.sendMessage(confirm.create());
+                if(StaffList.toggleVanish(ProxyServer.getInstance().getPlayer(strings[1]))) {
+                    ComponentBuilder confirm = new ComponentBuilder("Hai attivato la vanish per " + strings[0]).color(ChatColor.GREEN).bold(true);
+                    commandSender.sendMessage(confirm.create());
+                } else {
+                    ComponentBuilder confirm = new ComponentBuilder("Hai disattivato la vanish per " + strings[0]).color(ChatColor.GREEN).bold(true);
+                    commandSender.sendMessage(confirm.create());
+                }
             }
             return;
         }
 
-        StaffList.toggleVanish((ProxiedPlayer) commandSender);
-        ComponentBuilder confirm = new ComponentBuilder("Hai attivato la vanish").color(ChatColor.GREEN).bold(true);
-        commandSender.sendMessage(confirm.create());
+        if(StaffList.toggleVanish((ProxiedPlayer) commandSender)) {
+            ComponentBuilder confirm = new ComponentBuilder("Hai attivato la vanish").color(ChatColor.GREEN).bold(true);
+            commandSender.sendMessage(confirm.create());
+        } else {
+            ComponentBuilder confirm = new ComponentBuilder("Hai disattivato la vanish").color(ChatColor.GREEN).bold(true);
+            commandSender.sendMessage(confirm.create());
+        }
     }
 }
