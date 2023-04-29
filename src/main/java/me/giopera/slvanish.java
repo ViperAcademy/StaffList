@@ -14,6 +14,8 @@ public class slvanish extends Command {
 
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
+        if (!(commandSender instanceof ProxiedPlayer))
+            return;
         if (commandSender.hasPermission("stafflist.vanishothers") && strings.length > 0){
             if(ProxyServer.getInstance().getPlayer(strings[0]) == null) {
                 ComponentBuilder err = new ComponentBuilder("Errore, il player non risulta essere online nel server proxy!").color(ChatColor.DARK_RED).bold(true);
