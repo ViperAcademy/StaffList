@@ -98,7 +98,7 @@ public class sl extends Command {
         msgMods.removeComponent(msgMods.getCursor());
         msgHelpers.removeComponent(msgHelpers.getCursor());
 
-        ComponentBuilder init = new ComponentBuilder("Staffers Online: ").color(ChatColor.GOLD).bold(true).append("(( Online:").color(ChatColor.GRAY).italic(true).append(Integer.toString(Owners+Admins+SrMods+Mods+Helpers)).color(ChatColor.WHITE).italic(true).append(")").color(ChatColor.GRAY).italic(true);
+        ComponentBuilder init = new ComponentBuilder("Staffers Online: ").color(ChatColor.GOLD).bold(true).append("(( Online: ").color(ChatColor.GRAY).italic(true).bold(false).append(Integer.toString(Owners+Admins+SrMods+Mods+Helpers)).color(ChatColor.WHITE).italic(true).append(" ))").color(ChatColor.GRAY).italic(true);
         if(!(Owners == 0 && Admins == 0 && SrMods == 0 && Mods == 0 && Helpers == 0))
             commandSender.sendMessage(init.create());
         if(Owners != 0)
