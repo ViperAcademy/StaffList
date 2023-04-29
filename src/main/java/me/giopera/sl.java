@@ -24,11 +24,11 @@ public class sl extends Command {
 
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
-        ComponentBuilder msgOwners = new ComponentBuilder("Owner ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgAdmins = new ComponentBuilder("Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgSrMods = new ComponentBuilder("Sr. Mod ").color(ChatColor.DARK_GREEN).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgMods = new ComponentBuilder("Mod ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgHelpers = new ComponentBuilder("Helper ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgOwners = new ComponentBuilder("▪ Owner ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgAdmins = new ComponentBuilder("▪ Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgSrMods = new ComponentBuilder("▪ Sr. Mod ").color(ChatColor.DARK_GREEN).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgMods = new ComponentBuilder("▪ Mod ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgHelpers = new ComponentBuilder("▪ Helper ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
 
         /*
         ComponentBuilder msgOwners = new ComponentBuilder("");
@@ -69,11 +69,11 @@ public class sl extends Command {
         msgMods.append(Integer.toString(Mods)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
         msgHelpers.append(Integer.toString(Helpers)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
 
-        msgOwners.append("▪ ").color(ChatColor.GRAY);
-        msgAdmins.append("▪ ").color(ChatColor.GRAY);
-        msgSrMods.append("▪ ").color(ChatColor.GRAY);
-        msgMods.append("▪ ").color(ChatColor.GRAY);
-        msgHelpers.append("▪ ").color(ChatColor.GRAY);
+        msgOwners.append("» ").color(ChatColor.GRAY);
+        msgAdmins.append("» ").color(ChatColor.GRAY);
+        msgSrMods.append("» ").color(ChatColor.GRAY);
+        msgMods.append("» ").color(ChatColor.GRAY);
+        msgHelpers.append("» ").color(ChatColor.GRAY);
 
         for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
             if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
@@ -98,7 +98,7 @@ public class sl extends Command {
         msgMods.removeComponent(msgMods.getCursor());
         msgHelpers.removeComponent(msgHelpers.getCursor());
 
-        ComponentBuilder init = new ComponentBuilder("Staffer Online").color(ChatColor.GOLD).bold(true).append("(").color(ChatColor.GRAY).append(Integer.toString(Owners+Admins+SrMods+Mods+Helpers)).color(ChatColor.WHITE).append(")").color(ChatColor.GRAY);
+        ComponentBuilder init = new ComponentBuilder("Staffers Online: ").color(ChatColor.GOLD).bold(true).append("(( Online:").color(ChatColor.GRAY).italic(true).append(Integer.toString(Owners+Admins+SrMods+Mods+Helpers)).color(ChatColor.WHITE).italic(true).append(")").color(ChatColor.GRAY).italic(true);
         if(!(Owners == 0 && Admins == 0 && SrMods == 0 && Mods == 0 && Helpers == 0))
             commandSender.sendMessage(init.create());
         if(Owners != 0)
