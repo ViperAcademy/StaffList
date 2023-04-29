@@ -9,7 +9,7 @@ import java.util.List;
 
 public final class StaffList extends Plugin {
 
-    public static List<ProxiedPlayer> vanished = new ArrayList<ProxiedPlayer>();
+    public static List<ProxiedPlayer> vanished = new ArrayList<>();
     public static void addVanishedPlayer(ProxiedPlayer p){
         vanished.add(p);
     }
