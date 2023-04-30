@@ -93,8 +93,8 @@ public class sl extends Command {
                 msgHelpers.append(p.getName()).color(ChatColor.WHITE);
             }
             if(afk.contains(p)) {
-                msgOwners.append(" [AFK]");
-                msgOwners.append(", ");
+                msgOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
+                msgOwners.append(", ").color(ChatColor.WHITE).italic(false);
             } else
                 msgOwners.append(", ");
         }
