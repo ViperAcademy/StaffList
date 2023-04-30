@@ -24,7 +24,7 @@ public class slafk extends Command {
                 ComponentBuilder err = new ComponentBuilder("Errore, il player non risulta essere online nel server proxy!").color(ChatColor.DARK_RED).bold(true);
                 commandSender.sendMessage(err.create());
             } else {
-                if(StaffList.toggleVanish(ProxyServer.getInstance().getPlayer(strings[1]))) {
+                if(StaffList.toggleAfk(ProxyServer.getInstance().getPlayer(strings[1]))) {
                     ComponentBuilder confirm = new ComponentBuilder("Hai messo afk " + strings[0]).color(ChatColor.GREEN).bold(true);
                     commandSender.sendMessage(confirm.create());
                 } else {
@@ -35,7 +35,7 @@ public class slafk extends Command {
             return;
         }
 
-        if(StaffList.toggleVanish((ProxiedPlayer) commandSender)) {
+        if(StaffList.toggleAfk((ProxiedPlayer) commandSender)) {
             ComponentBuilder confirm = new ComponentBuilder("Sei andato Afk").color(ChatColor.GREEN).bold(true);
             commandSender.sendMessage(confirm.create());
         } else {
