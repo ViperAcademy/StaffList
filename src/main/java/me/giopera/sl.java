@@ -115,7 +115,7 @@ public class sl extends Command {
                     msgHelpers.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgHelpers.append(", ").color(ChatColor.WHITE).italic(false);
                 } else
-                    msghelpers.append(", ");
+                    msgHelpers.append(", ");
             }
             
         }
