@@ -6,7 +6,6 @@ import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
-import net.md_5.bungee.protocol.packet.Chat;
 
 
 public class playerinfo extends Command {
@@ -36,7 +35,7 @@ public class playerinfo extends Command {
         msg.append("UUID: " + p.getUniqueId().toString()).color(ChatColor.GREEN).append("\n");
         msg.append("View Distance: " + p.getViewDistance()).color(ChatColor.GREEN).append("\n");
         msg.append("Colori chat: " + p.hasChatColors()).color(ChatColor.GREEN).append("\n");
-        msg.append("Forge: " + p.isForgeUser()).color(ChatColor.GREEN).append("\n");
+        msg.append("Forge: " + p.isForgeUser()).color(ChatColor.GREEN);
 
         commandSender.sendMessage(msg.create());
 
