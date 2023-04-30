@@ -44,6 +44,7 @@ public class sl extends Command {
         int Helpers = 0;
 
         List<ProxiedPlayer> vanished = StaffList.getVanishedPlayers();
+        List<ProxiedPlayer> afk = StaffList.getAfkPlayers();
 
         for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
             if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
@@ -77,20 +78,24 @@ public class sl extends Command {
 
         for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
             if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
-                msgOwners.append(p.getName()).color(ChatColor.WHITE).append(", ");
+                msgOwners.append(p.getName()).color(ChatColor.WHITE);
             }
             if (p.hasPermission("StaffList.Admin") && !(vanished.contains(p))) {
-                msgAdmins.append(p.getName()).color(ChatColor.WHITE).append(", ");
+                msgAdmins.append(p.getName()).color(ChatColor.WHITE);
             }
             if (p.hasPermission("StaffList.SrMod") && !(vanished.contains(p))) {
-                msgSrMods.append(p.getName()).color(ChatColor.WHITE).append(", ");
+                msgSrMods.append(p.getName()).color(ChatColor.WHITE);
             }
             if (p.hasPermission("StaffList.Mod") && !(vanished.contains(p))) {
-                msgMods.append(p.getName()).color(ChatColor.WHITE).append(", ");
+                msgMods.append(p.getName()).color(ChatColor.WHITE);
             }
             if (p.hasPermission("StaffList.Helper") && !(vanished.contains(p))) {
-                msgHelpers.append(p.getName()).color(ChatColor.WHITE).append(", ");
+                msgHelpers.append(p.getName()).color(ChatColor.WHITE);
             }
+            if(afk.contains(p))
+                msgOwners.append(" [AFK], ");
+            else
+                msgOwners.append(", ");
         }
         msgOwners.removeComponent(msgOwners.getCursor());
         msgAdmins.removeComponent(msgAdmins.getCursor());

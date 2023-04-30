@@ -10,6 +10,7 @@ import java.util.List;
 public final class StaffList extends Plugin {
 
     public static List<ProxiedPlayer> vanished = new ArrayList<>();
+    public static List<ProxiedPlayer> afkPlayers = new ArrayList<>();
     public static boolean toggleVanish(ProxiedPlayer p){
         if(vanished.contains(p)) {
             vanished.remove(p);
@@ -20,6 +21,19 @@ public final class StaffList extends Plugin {
         }
     }
 
+    public static boolean toggleAfk(ProxiedPlayer p){
+        if(afkPlayers.contains(p)) {
+            afkPlayers.remove(p);
+            return false;
+        } else {
+            afkPlayers.add(p);
+            return true;
+        }
+    }
+
+    public static List<ProxiedPlayer> getAfkPlayers(){
+        return afkPlayers;
+    }
     public static List<ProxiedPlayer> getVanishedPlayers(){
         return vanished;
     }
