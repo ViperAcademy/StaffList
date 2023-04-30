@@ -92,9 +92,10 @@ public class sl extends Command {
             if (p.hasPermission("StaffList.Helper") && !(vanished.contains(p))) {
                 msgHelpers.append(p.getName()).color(ChatColor.WHITE);
             }
-            if(afk.contains(p))
-                msgOwners.append(" [AFK], ");
-            else
+            if(afk.contains(p)) {
+                msgOwners.append(" [AFK]");
+                msgOwners.append(", ");
+            } else
                 msgOwners.append(", ");
         }
         msgOwners.removeComponent(msgOwners.getCursor());
