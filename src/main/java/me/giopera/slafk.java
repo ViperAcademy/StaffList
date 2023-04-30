@@ -11,7 +11,7 @@ public class slafk extends Command {
 
 
 
-    public slafk(StaffList staffList) {
+    public slafk() {
         super("slafk", "stafflist.afk", "slafk", "stafflistafk", "afksl", "afkstafflist");
     }
 

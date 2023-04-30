@@ -7,7 +7,7 @@ import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.plugin.Command;
 
 public class whereis extends Command {
-    public whereis(StaffList stafflist) {
+    public whereis() {
         super("whereis", "whereis.use", "whereis");
     }
 

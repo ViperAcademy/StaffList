@@ -18,7 +18,7 @@ public class sl extends Command {
         super("sl", "StaffList.use", "sl", "stafflist", "liststaff", "ls");
     }
 */
-    public sl(StaffList staffList) {
+    public sl() {
         super("sl", "StaffList.use", "sl", "stafflist", "liststaff", "ls");
     }
 
@@ -79,24 +79,45 @@ public class sl extends Command {
         for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
             if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
                 msgOwners.append(p.getName()).color(ChatColor.WHITE);
+                if(afk.contains(p)) {
+                    msgOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
+                    msgOwners.append(", ").color(ChatColor.WHITE).italic(false);
+                } else
+                    msgOwners.append(", ");
             }
             if (p.hasPermission("StaffList.Admin") && !(vanished.contains(p))) {
                 msgAdmins.append(p.getName()).color(ChatColor.WHITE);
+                if(afk.contains(p)) {
+                    msgAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
+                    msgAdmins.append(", ").color(ChatColor.WHITE).italic(false);
+                } else
+                    msgAdmins.append(", ");
             }
             if (p.hasPermission("StaffList.SrMod") && !(vanished.contains(p))) {
                 msgSrMods.append(p.getName()).color(ChatColor.WHITE);
+                if(afk.contains(p)) {
+                    msgSrMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
+                    msgSrMods.append(", ").color(ChatColor.WHITE).italic(false);
+                } else
+                    msgSrMods.append(", ");
             }
             if (p.hasPermission("StaffList.Mod") && !(vanished.contains(p))) {
                 msgMods.append(p.getName()).color(ChatColor.WHITE);
+                if(afk.contains(p)) {
+                    msgMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
+                    msgMods.append(", ").color(ChatColor.WHITE).italic(false);
+                } else
+                    msgMods.append(", ");
             }
             if (p.hasPermission("StaffList.Helper") && !(vanished.contains(p))) {
                 msgHelpers.append(p.getName()).color(ChatColor.WHITE);
+                if(afk.contains(p)) {
+                    msgHelpers.append(" [AFK]").color(ChatColor.GRAY).italic(true);
+                    msgHelpers.append(", ").color(ChatColor.WHITE).italic(false);
+                } else
+                    msghelpers.append(", ");
             }
-            if(afk.contains(p)) {
-                msgOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
-                msgOwners.append(", ").color(ChatColor.WHITE).italic(false);
-            } else
-                msgOwners.append(", ");
+            
         }
         msgOwners.removeComponent(msgOwners.getCursor());
         msgAdmins.removeComponent(msgAdmins.getCursor());

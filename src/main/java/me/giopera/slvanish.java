@@ -8,7 +8,7 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
 public class slvanish extends Command {
-    public slvanish(StaffList staffList) {
+    public slvanish() {
         super("slvanish", "stafflist.vanish", "slvanish", "stafflistvanish", "vanishsl", "vanishstafflist");
     }
 

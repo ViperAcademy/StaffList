@@ -9,7 +9,7 @@ import net.md_5.bungee.api.plugin.Command;
 
 
 public class playerinfo extends Command {
-    public playerinfo(StaffList staffList) {
+    public playerinfo() {
         super("playerinfo", "staffcore.playerinfo", "info");
     }
 

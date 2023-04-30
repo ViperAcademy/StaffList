@@ -40,11 +40,11 @@ public final class StaffList extends Plugin {
 
     @Override
     public void onEnable() {
-        ProxyServer.getInstance().getPluginManager().registerCommand(this, new sl (this));
-        ProxyServer.getInstance().getPluginManager().registerCommand(this, new whereis (this));
-        ProxyServer.getInstance().getPluginManager().registerCommand(this, new slafk ( this));
-        ProxyServer.getInstance().getPluginManager().registerCommand(this, new slvanish (this));
-        ProxyServer.getInstance().getPluginManager().registerCommand(this, new playerinfo (this));
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new sl ());
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new whereis ());
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new slafk ());
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new slvanish ());
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new playerinfo ());
         getLogger().info("StaffList Avviato con successo");
 
     }
