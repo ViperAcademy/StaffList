@@ -1,3 +1,23 @@
-name: StaffList
+name: StaffCore
 version: '${project.version}'
 main: me.giopera.StaffList
+commands:
+  sl:
+    description: A command to show the current online staff
+    usage: /<command>
+    aliases: [sl, stafflist]
+
+  slvanish:
+    description: A command to hide in the stafflist (PlayerName option will only work if you have the right permission)
+    usage: /<command> <playerName>
+    aliases: [slvanish, stafflistvanish, vanishsl, vanishstafflist]
+
+  slafk:
+    description: A command to put an afk tag in the stafflist (PlayerName option will only work if you have the right permission)
+    usage: /<command> <playerName>
+    aliases: [slafk, stafflistafk, afksl, afkstafflist]
+
+  playerinfo:
+    description: A command to show all info from the class ProxiedPlayer
+    usage: /<command> <playerName>
+    aliases: [playerinfo, info]
