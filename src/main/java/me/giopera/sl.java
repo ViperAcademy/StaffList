@@ -1,6 +1,7 @@
 package me.giopera;
 
 
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -43,8 +44,8 @@ public class sl extends Command {
         int Mods = 0;
         int Helpers = 0;
 
-        List<ProxiedPlayer> vanished = StaffList.getVanishedPlayers();
-        List<ProxiedPlayer> afk = StaffList.getAfkPlayers();
+        LinkedList<ProxiedPlayer> vanished = StaffList.getVanishedPlayers();
+        LinkedList<ProxiedPlayer> afk = StaffList.getAfkPlayers();
 
         for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
             if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
