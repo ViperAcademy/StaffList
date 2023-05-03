@@ -13,6 +13,6 @@ public class whereis extends Command {
 
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
-        commandSender.sendMessage(new ComponentBuilder(strings[0] + " is in" + ProxyServer.getInstance().getPlayer(strings[0]).getServer().getInfo().getName()).color(ChatColor.GOLD).create());
+        commandSender.sendMessage(new ComponentBuilder(strings[0] + " is in " + ProxyServer.getInstance().getPlayer(strings[0]).getServer().getInfo().getName()).color(ChatColor.GOLD).create());
     }
 }
