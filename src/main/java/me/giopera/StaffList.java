@@ -45,6 +45,7 @@ public final class StaffList extends Plugin {
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new slafk ());
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new slvanish ());
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new playerinfo ());
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new truesl ());
         getLogger().info("StaffList Avviato con successo");
 
     }
