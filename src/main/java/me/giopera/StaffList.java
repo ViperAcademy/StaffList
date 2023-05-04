@@ -1,17 +1,18 @@
 package me.giopera;
 
+import me.giopera.Class.Staffer;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 public final class StaffList extends Plugin {
 
     public static LinkedList<ProxiedPlayer> vanished = new LinkedList<>();
     public static LinkedList<ProxiedPlayer> afkPlayers = new LinkedList<>();
+    public static LinkedList<Staffer> onlineStaffers = new LinkedList<>();
+
     public static boolean toggleVanish(ProxiedPlayer p){
         if(vanished.contains(p)) {
             vanished.remove(p);
@@ -47,6 +48,7 @@ public final class StaffList extends Plugin {
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new slvanish ());
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new playerinfo ());
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new truesl ());
+        ProxyServer.getInstance().getPluginManager().registerListener(this, new onPlayerJoin ());
         getLogger().info("StaffList Avviato con successo");
 
     }
@@ -55,4 +57,5 @@ public final class StaffList extends Plugin {
     public void onDisable() {
         getLogger().info("StaffList Disabilitato con successo");
     }
+
 }

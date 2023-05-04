@@ -26,10 +26,17 @@ public class sl extends Command {
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
         ComponentBuilder msgOwners = new ComponentBuilder("▪ Owner ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgSrAdmins = new ComponentBuilder("▪ Se. Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgAdminsPlus = new ComponentBuilder("▪ Admin+ ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdmins = new ComponentBuilder("▪ Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgSrMods = new ComponentBuilder("▪ Sr. Mod ").color(ChatColor.DARK_GREEN).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgModsPlus = new ComponentBuilder("▪ Mod+ ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgMods = new ComponentBuilder("▪ Mod ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgHelpersPlus = new ComponentBuilder("▪ Helper+ ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgHelpers = new ComponentBuilder("▪ Helper ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgCapoStaff = new ComponentBuilder("▪ Capo Staff ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgCapoBuilder = new ComponentBuilder("▪ Capo Builder ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgBulders = new ComponentBuilder("▪ Builder ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
 
         /*
         ComponentBuilder msgOwners = new ComponentBuilder("");
