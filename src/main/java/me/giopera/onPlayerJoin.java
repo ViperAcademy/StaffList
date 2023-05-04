@@ -15,43 +15,43 @@ public class onPlayerJoin implements Listener {
     @EventHandler
     public void onJoin(ServerConnectEvent event) {
         ProxiedPlayer p = event.getPlayer();
-        if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.Owner")) {
             onlineStaffers.add(new Staffer(p, Role.OWNER));
         }
-        if (p.hasPermission("StaffList.CoOwner") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.CoOwner")) {
             onlineStaffers.add(new Staffer(p, Role.COOWNER));
         }
-        if (p.hasPermission("StaffList.SrAdmin") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.SrAdmin")) {
             onlineStaffers.add(new Staffer(p, Role.SRADMIN));
         }
-        if (p.hasPermission("StaffList.AdminPlus") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.AdminPlus")) {
             onlineStaffers.add(new Staffer(p, Role.ADMINPLUS));
         }
-        if (p.hasPermission("StaffList.Admin") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.Admin")) {
             onlineStaffers.add(new Staffer(p, Role.ADMIN));
         }
-        if (p.hasPermission("StaffList.SrMod") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.SrMod")) {
             onlineStaffers.add(new Staffer(p, Role.SRMOD));
         }
-        if (p.hasPermission("StaffList.ModPlus") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.ModPlus")) {
             onlineStaffers.add(new Staffer(p, Role.MODPLUS));
         }
-        if (p.hasPermission("StaffList.Mod") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.Mod")) {
             onlineStaffers.add(new Staffer(p, Role.MOD));
         }
-        if (p.hasPermission("StaffList.HelperPlus") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.HelperPlus")) {
             onlineStaffers.add(new Staffer(p, Role.HELPERPLUS));
         }
-        if (p.hasPermission("StaffList.Helper") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.Helper")) {
             onlineStaffers.add(new Staffer(p, Role.HELPER));
         }
-        if (p.hasPermission("StaffList.CapoStaff") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.CapoStaff")) {
             onlineStaffers.add(new Staffer(p, Role.CAPOSTAFF));
         }
-        if (p.hasPermission("StaffList.capoBuilder") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.capoBuilder")) {
             onlineStaffers.add(new Staffer(p, Role.CAPOBUILDER));
         }
-        if (p.hasPermission("StaffList.builder") && !(vanished.contains(p))) {
+        if (p.hasPermission("StaffList.builder")) {
             onlineStaffers.add(new Staffer(p, Role.BUILDER));
         }
     }
