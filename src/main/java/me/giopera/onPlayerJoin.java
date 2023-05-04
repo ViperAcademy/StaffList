@@ -4,6 +4,7 @@ import me.giopera.Class.Role;
 import me.giopera.Class.Staffer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.ServerConnectEvent;
+import net.md_5.bungee.api.event.ServerDisconnectEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
@@ -52,6 +53,12 @@ public class onPlayerJoin implements Listener {
         }
         if (p.hasPermission("StaffList.builder") && !(vanished.contains(p))) {
             onlineStaffers.add(new Staffer(p, Role.BUILDER));
+        }
+    }
+    @EventHandler
+    public void onDisconnect(ServerDisconnectEvent event) {
+        for (Role r : Role.values()) {
+            onlineStaffers.remove(new Staffer(event.getPlayer(), r));
         }
     }
 }
