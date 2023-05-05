@@ -16,7 +16,7 @@ public class onPlayerUnJoin implements Listener {
             onlineStaffers.remove(new Staffer(event.getPlayer(), r));
         }
 
-        /*
+
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.OWNER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.COOWNER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.SRADMIN));
@@ -30,7 +30,7 @@ public class onPlayerUnJoin implements Listener {
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.HELPER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.CAPOBUILDER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.BUILDER));
-        */
+
 
 
     }
