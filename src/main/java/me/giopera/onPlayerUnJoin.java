@@ -7,19 +7,21 @@ import net.md_5.bungee.api.event.ServerDisconnectEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
+import java.util.ArrayList;
+
 import static me.giopera.StaffList.onlineStaffers;
 
 public class onPlayerUnJoin implements Listener {
     @EventHandler
     public void onDisconnect(PlayerDisconnectEvent event) {
-
+        ArrayList<Staffer> al = new ArrayList<>();
         for(Role r : Role.values()){
-            Staffer s = new Staffer(event.getPlayer(), r);
-            onlineStaffers.remove(s);
+            al.add(new Staffer(event.getPlayer(), r));
         }
+        onlineStaffers.removeAll(al);
 
-
-        onlineStaffers.remove(new Staffer(event.getPlayer(), Role.OWNER));
+/*
+        onlineStaffers.removeAll(new Staffer(event.getPlayer(), Role.OWNER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.COOWNER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.SRADMIN));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.ADMINPLUS));
@@ -32,7 +34,7 @@ public class onPlayerUnJoin implements Listener {
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.HELPER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.CAPOBUILDER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.BUILDER));
-
+*/
 
 
     }
