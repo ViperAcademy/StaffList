@@ -33,9 +33,9 @@ public sl() {
      */
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
-        ComponentBuilder msgOwners = new ComponentBuilder("▪ Owner ").color(ChatColor.DARK_RED).bold(true).append("(").color(ChatColor.GRAY).bold(false);
-        ComponentBuilder msgCoOwners = new ComponentBuilder("▪ CoOwner ").color(ChatColor.DARK_RED).bold(true).append("(").color(ChatColor.GRAY).bold(false);
-        ComponentBuilder msgSrAdmins = new ComponentBuilder("▪ Sr. Admin ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgOwners = new ComponentBuilder("▪ Owner ").color(ChatColor.of("#780000")).bold(true).append("(").color(ChatColor.GRAY).bold(false);
+        ComponentBuilder msgCoOwners = new ComponentBuilder("▪ CoOwner ").color(ChatColor.of("#a30202")).bold(true).append("(").color(ChatColor.GRAY).bold(false);
+        ComponentBuilder msgSrAdmins = new ComponentBuilder("▪ Sr. Admin ").color(ChatColor.of("#ba0202")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdminsPlus = new ComponentBuilder("▪ Admin+ ").color(ChatColor.of("#d90000")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdmins = new ComponentBuilder("▪ Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgCapoStaff = new ComponentBuilder("▪ Capo Staff ").color(ChatColor.of("#3dcbff")).append("(").color(ChatColor.GRAY);
