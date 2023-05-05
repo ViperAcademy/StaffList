@@ -16,11 +16,8 @@ public class onPlayerUnJoin implements Listener {
     @EventHandler
     public void onDisconnect(PlayerDisconnectEvent event) {
         ArrayList<Staffer> al = new ArrayList<>();
-        for(Role r : Role.values()){
-            al.add(new Staffer(event.getPlayer(), r));
-            ProxyServer.getInstance().getLogger().info("[DEBUG][ROLE] "+ r + "        [PLAYER] "+ event.getPlayer());
-        }
-        onlineStaffers.removeAll(al);
+        Staffer s = new Staffer(event.getPlayer(), Role.COOWNER);
+        onlineStaffers.remove(s);
         ProxyServer.getInstance().getLogger().info("[DEBUG] onlineStaffers.removeAll(al);");
 
 /*
