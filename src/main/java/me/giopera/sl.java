@@ -183,6 +183,7 @@ public sl() {
             }
         }
         msgOwners.removeComponent(msgOwners.getCursor());
+        msgCoOwners.removeComponent(msgCoOwners.getCursor());
         msgSrAdmins.removeComponent(msgSrAdmins.getCursor());
         msgAdminsPlus.removeComponent(msgAdminsPlus.getCursor());
         msgAdmins.removeComponent(msgAdmins.getCursor());
