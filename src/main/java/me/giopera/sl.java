@@ -12,6 +12,13 @@ import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
+import static me.giopera.StaffList.vanished;
+import static me.giopera.StaffList.afkPlayers;
+import static me.giopera.StaffList.onlineStaffers;
+
+import me.giopera.Class.Role;
+import me.giopera.Class.Staffer;
+
 
 public class sl extends Command {
 
@@ -25,16 +32,16 @@ public class sl extends Command {
 
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
-        ComponentBuilder msgOwners = new ComponentBuilder("▪ Owner ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgSrAdmins = new ComponentBuilder("▪ Se. Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgOwners = new ComponentBuilder("▪ Owner ").color(ChatColor.DARK_RED).bold(true).append("(").color(ChatColor.GRAY).bold(false);
+        ComponentBuilder msgSrAdmins = new ComponentBuilder("▪ Sr. Admin ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdminsPlus = new ComponentBuilder("▪ Admin+ ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdmins = new ComponentBuilder("▪ Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgSrMods = new ComponentBuilder("▪ Sr. Mod ").color(ChatColor.DARK_GREEN).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgModsPlus = new ComponentBuilder("▪ Mod+ ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgMods = new ComponentBuilder("▪ Mod ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgHelpersPlus = new ComponentBuilder("▪ Helper+ ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgHelpers = new ComponentBuilder("▪ Helper ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgCapoStaff = new ComponentBuilder("▪ Capo Staff ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgSrMods = new ComponentBuilder("▪ Sr. Mod ").color(ChatColor.DARK_GREEN).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgModsPlus = new ComponentBuilder("▪ Mod+ ").color(ChatColor.of("#3bb33b")).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgMods = new ComponentBuilder("▪ Mod ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgHelpersPlus = new ComponentBuilder("▪ Helper+ ").color(ChatColor.of("#3e3ecf")).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgHelpers = new ComponentBuilder("▪ Helper ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgCapoBuilder = new ComponentBuilder("▪ Capo Builder ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgBulders = new ComponentBuilder("▪ Builder ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
 
@@ -45,32 +52,6 @@ public class sl extends Command {
         ComponentBuilder msgMods = new ComponentBuilder("");
         ComponentBuilder msgHelpers = new ComponentBuilder("");
 */
-        int Owners = 0;
-        int Admins = 0;
-        int SrMods = 0;
-        int Mods = 0;
-        int Helpers = 0;
-
-        LinkedList<ProxiedPlayer> vanished = StaffList.getVanishedPlayers();
-        LinkedList<ProxiedPlayer> afk = StaffList.getAfkPlayers();
-
-        for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
-            if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
-                Owners++;
-            }
-            if (p.hasPermission("StaffList.Admin") && !(vanished.contains(p))) {
-                Admins++;
-            }
-            if (p.hasPermission("StaffList.SrMod") && !(vanished.contains(p))) {
-                SrMods++;
-            }
-            if (p.hasPermission("StaffList.Mod") && !(vanished.contains(p))) {
-                Mods++;
-            }
-            if (p.hasPermission("StaffList.Helper") && !(vanished.contains(p))) {
-                Helpers++;
-            }
-        }
 
         msgOwners.append(Integer.toString(Owners)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
         msgAdmins.append(Integer.toString(Admins)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
@@ -84,8 +65,8 @@ public class sl extends Command {
         msgMods.append("» ").color(ChatColor.GRAY);
         msgHelpers.append("» ").color(ChatColor.GRAY);
 
-        for (ProxiedPlayer p : ProxyServer.getInstance().getPlayers() ) {
-            if (p.hasPermission("StaffList.Owner") && !(vanished.contains(p))) {
+        for (Staffer s : onlineStaffers) {
+            if (s.getRole() == Role.OWNER && !(vanished.contains(p))) {
                 msgOwners.append(p.getName()).color(ChatColor.WHITE);
                 if(afk.contains(p)) {
                     msgOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -93,7 +74,7 @@ public class sl extends Command {
                 } else
                     msgOwners.append(", ");
             }
-            if (p.hasPermission("StaffList.Admin") && !(vanished.contains(p))) {
+            if (s.getRole() == Role.ADMIN && !(vanished.contains(p))) {
                 msgAdmins.append(p.getName()).color(ChatColor.WHITE);
                 if(afk.contains(p)) {
                     msgAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -101,7 +82,7 @@ public class sl extends Command {
                 } else
                     msgAdmins.append(", ");
             }
-            if (p.hasPermission("StaffList.SrMod") && !(vanished.contains(p))) {
+            if (s.getRole() == Role.SRMOD && !(vanished.contains(p))) {
                 msgSrMods.append(p.getName()).color(ChatColor.WHITE);
                 if(afk.contains(p)) {
                     msgSrMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -109,7 +90,7 @@ public class sl extends Command {
                 } else
                     msgSrMods.append(", ");
             }
-            if (p.hasPermission("StaffList.Mod") && !(vanished.contains(p))) {
+            if (s.getRole() == Role.MOD && !(vanished.contains(p))) {
                 msgMods.append(p.getName()).color(ChatColor.WHITE);
                 if(afk.contains(p)) {
                     msgMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -117,7 +98,7 @@ public class sl extends Command {
                 } else
                     msgMods.append(", ");
             }
-            if (p.hasPermission("StaffList.Helper") && !(vanished.contains(p))) {
+            if (s.getRole() == Role.HELPER && !(vanished.contains(p))) {
                 msgHelpers.append(p.getName()).color(ChatColor.WHITE);
                 if(afk.contains(p)) {
                     msgHelpers.append(" [AFK]").color(ChatColor.GRAY).italic(true);
