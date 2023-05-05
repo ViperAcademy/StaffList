@@ -15,8 +15,8 @@ import static me.giopera.StaffList.vanished;
 
 public class onPlayerJoin implements Listener {
     @EventHandler
-    public void onJoin(PlayerHandshakeEvent event) {
-        ProxiedPlayer p = ProxyServer.getInstance().getPlayer(event.getConnection().getName());
+    public void onJoin(ServerConnectEvent event) {
+        ProxiedPlayer p = event.getPlayer();
         if (p.hasPermission("StaffList.Owner")) {
             onlineStaffers.add(new Staffer(p, Role.OWNER));
         }
