@@ -5,13 +5,14 @@ import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public final class StaffList extends Plugin {
 
     public static LinkedList<ProxiedPlayer> vanished = new LinkedList<>();
     public static LinkedList<ProxiedPlayer> afkPlayers = new LinkedList<>();
-    public static LinkedList<Staffer> onlineStaffers = new LinkedList<>();
+    public static ArrayList<Staffer> onlineStaffers = new ArrayList<>();
 
     public static boolean toggleVanish(ProxiedPlayer p){
         if(vanished.contains(p)) {
