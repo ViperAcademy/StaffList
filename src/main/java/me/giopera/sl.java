@@ -38,14 +38,14 @@ public sl() {
         ComponentBuilder msgSrAdmins = new ComponentBuilder("▪ Sr. Admin ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdminsPlus = new ComponentBuilder("▪ Admin+ ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdmins = new ComponentBuilder("▪ Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgCapoStaff = new ComponentBuilder("▪ Capo Staff ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgCapoStaff = new ComponentBuilder("▪ Capo Staff ").color(ChatColor.of("#3dcbff")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgSrMods = new ComponentBuilder("▪ Sr. Mod ").color(ChatColor.DARK_GREEN).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgModsPlus = new ComponentBuilder("▪ Mod+ ").color(ChatColor.of("#3bb33b")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgMods = new ComponentBuilder("▪ Mod ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgHelpersPlus = new ComponentBuilder("▪ Helper+ ").color(ChatColor.of("#3e3ecf")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgHelpers = new ComponentBuilder("▪ Helper ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgCapoBuilder = new ComponentBuilder("▪ Capo Builder ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgBuilders = new ComponentBuilder("▪ Builder ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgCapoBuilder = new ComponentBuilder("▪ Capo Builder ").color(ChatColor.of("#7d00d1")).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgBuilders = new ComponentBuilder("▪ Builder ").color(ChatColor.of("#a000d1")).append("(").color(ChatColor.GRAY);
 
         long owners = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
         long coOwners = onlineStaffers.stream().filter(s -> Role.COOWNER.equals(s.getRole())).count();
