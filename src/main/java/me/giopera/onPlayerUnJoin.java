@@ -13,7 +13,8 @@ public class onPlayerUnJoin implements Listener {
     public void onDisconnect(ServerDisconnectEvent event) {
 
         for(Role r : Role.values()){
-            onlineStaffers.remove(new Staffer(event.getPlayer(), r));
+            Staffer s = new Staffer(event.getPlayer(), r);
+            onlineStaffers.remove(s);
         }
 
 
