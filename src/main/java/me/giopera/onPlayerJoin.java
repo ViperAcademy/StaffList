@@ -55,10 +55,5 @@ public class onPlayerJoin implements Listener {
             onlineStaffers.add(new Staffer(p, Role.BUILDER));
         }
     }
-    @EventHandler
-    public void onDisconnect(ServerDisconnectEvent event) {
-        for (Role r : Role.values()) {
-            onlineStaffers.remove(new Staffer(event.getPlayer(), r));
-        }
-    }
 }
+
