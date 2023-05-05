@@ -18,13 +18,13 @@ public class onPlayerUnJoin implements Listener {
         ArrayList<Staffer> al = new ArrayList<>();
         for(Role r : Role.values()){
             al.add(new Staffer(event.getPlayer(), r));
-            ProxyServer.getInstance().getLogger().info("[DEBUG] "+r);
+            ProxyServer.getInstance().getLogger().info("[DEBUG][ROLE] "+ r + "        [PLAYER]");
         }
         onlineStaffers.removeAll(al);
         ProxyServer.getInstance().getLogger().info("[DEBUG] onlineStaffers.removeAll(al);");
 
 /*
-        onlineStaffers.removeAll(new Staffer(event.getPlayer(), Role.OWNER));
+        onlineStaffers.remove(new Staffer(event.getPlayer(), Role.OWNER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.COOWNER));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.SRADMIN));
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.ADMINPLUS));
