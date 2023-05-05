@@ -2,6 +2,7 @@ package me.giopera;
 
 import me.giopera.Class.Role;
 import me.giopera.Class.Staffer;
+import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.event.PlayerDisconnectEvent;
 import net.md_5.bungee.api.event.ServerDisconnectEvent;
 import net.md_5.bungee.api.plugin.Listener;
@@ -17,8 +18,10 @@ public class onPlayerUnJoin implements Listener {
         ArrayList<Staffer> al = new ArrayList<>();
         for(Role r : Role.values()){
             al.add(new Staffer(event.getPlayer(), r));
+            ProxyServer.getInstance().getLogger().info("[DEBUG] "+r);
         }
         onlineStaffers.removeAll(al);
+        ProxyServer.getInstance().getLogger().info("[DEBUG] onlineStaffers.removeAll(al);");
 
 /*
         onlineStaffers.removeAll(new Staffer(event.getPlayer(), Role.OWNER));
