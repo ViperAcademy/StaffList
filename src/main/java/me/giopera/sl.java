@@ -36,7 +36,7 @@ public sl() {
         ComponentBuilder msgOwners = new ComponentBuilder("▪ Owner ").color(ChatColor.DARK_RED).bold(true).append("(").color(ChatColor.GRAY).bold(false);
         ComponentBuilder msgCoOwners = new ComponentBuilder("▪ CoOwner ").color(ChatColor.DARK_RED).bold(true).append("(").color(ChatColor.GRAY).bold(false);
         ComponentBuilder msgSrAdmins = new ComponentBuilder("▪ Sr. Admin ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgAdminsPlus = new ComponentBuilder("▪ Admin+ ").color(ChatColor.of("#c70000")).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgAdminsPlus = new ComponentBuilder("▪ Admin+ ").color(ChatColor.of("#d90000")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdmins = new ComponentBuilder("▪ Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgCapoStaff = new ComponentBuilder("▪ Capo Staff ").color(ChatColor.of("#3dcbff")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgSrMods = new ComponentBuilder("▪ Sr. Mod ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
