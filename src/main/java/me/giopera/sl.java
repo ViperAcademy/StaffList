@@ -196,7 +196,7 @@ public sl() {
         msgCapoBuilder.removeComponent(msgCapoBuilder.getCursor());
         msgBuilders.removeComponent(msgBuilders.getCursor());
 
-        ComponentBuilder init = new ComponentBuilder("Staffers Online: ").color(ChatColor.GOLD).bold(true).append("(( Online: ").color(ChatColor.GRAY).italic(true).bold(false).append(Long.toString(owners+admins+srMods+mods+helpers)).color(ChatColor.WHITE).italic(true).append(" ))").color(ChatColor.GRAY).italic(true);
+        ComponentBuilder init = new ComponentBuilder("Staffers Online: ").color(ChatColor.GOLD).bold(true).append("(( Online: ").color(ChatColor.GRAY).italic(true).bold(false).append(Long.toString(owners+coOwners+srAdmins+adminsPlus+admins+capoStaff+srMods+modsPlus+mods+helpersPlus+helpers+capoBuilder+builder)).color(ChatColor.WHITE).italic(true).append(" ))").color(ChatColor.GRAY).italic(true);
         boolean isThereAnybodyOnline = owners == 0 && srAdmins == 0 && adminsPlus == 0 && admins == 0 && capoStaff == 0 && srMods == 0 && modsPlus == 0 && mods == 0 && helpersPlus == 0 && helpers == 0 && capoBuilder == 0 && builder == 0;
         if(!(isThereAnybodyOnline))
             commandSender.sendMessage(init.create());
