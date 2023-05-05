@@ -30,9 +30,15 @@ public class sl extends Command {
         super("sl", "StaffList.use", "sl", "stafflist", "liststaff", "ls");
     }
 
+
+    /*
+     * @param commandSender The command sender
+     * @param strings Command strings
+     */
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
         ComponentBuilder msgOwners = new ComponentBuilder("▪ Owner ").color(ChatColor.DARK_RED).bold(true).append("(").color(ChatColor.GRAY).bold(false);
+        ComponentBuilder msgCoOwners = new ComponentBuilder("▪ CoOwner ").color(ChatColor.DARK_RED).bold(true).append("(").color(ChatColor.GRAY).bold(false);
         ComponentBuilder msgSrAdmins = new ComponentBuilder("▪ Sr. Admin ").color(ChatColor.DARK_RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdminsPlus = new ComponentBuilder("▪ Admin+ ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgAdmins = new ComponentBuilder("▪ Admin ").color(ChatColor.RED).append("(").color(ChatColor.GRAY);
@@ -52,20 +58,43 @@ public class sl extends Command {
         ComponentBuilder msgMods = new ComponentBuilder("");
         ComponentBuilder msgHelpers = new ComponentBuilder("");
 */
+        int owners = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int coOwners = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int srAdmins = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int adminsPlus = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int admins = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int capoStaff = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int srMods = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int modsPlus = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int mods = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int helpersPlus = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int helpers = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int capoBuilder = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
+        int builder = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
 
-        msgOwners.append(Integer.toString(Owners)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
-        msgAdmins.append(Integer.toString(Admins)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
-        msgSrMods.append(Integer.toString(SrMods)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
-        msgMods.append(Integer.toString(Mods)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
-        msgHelpers.append(Integer.toString(Helpers)).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
-
+        msgOwners.append(owners).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgCoOwners.append(coOwners).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgSrAdmins.append(srAdmins).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgAdminsPlus.append(adminsPlus).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgAdmins.append(admins).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgCapoStaff.append(capoStaff).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgSrMods.append(srMods).color(ChatColor.WHITE).append(") ").color(ChatColor.GRAY);
+        msgModsPlus.append(modsPlus).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgMods.append(mods).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgHelpersPlus.append(helpersPlus).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgHelpers.append(helpers).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgCapoBuilder.append(capoBuilder).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+        msgBulders.append(builder).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
+/*
         msgOwners.append("» ").color(ChatColor.GRAY);
         msgAdmins.append("» ").color(ChatColor.GRAY);
         msgSrMods.append("» ").color(ChatColor.GRAY);
         msgMods.append("» ").color(ChatColor.GRAY);
         msgHelpers.append("» ").color(ChatColor.GRAY);
+*/
 
         for (Staffer s : onlineStaffers) {
+            ProxiedPlayer p = s.getPlayer();
             if (s.getRole() == Role.OWNER && !(vanished.contains(p))) {
                 msgOwners.append(p.getName()).color(ChatColor.WHITE);
                 if(afk.contains(p)) {
@@ -74,13 +103,21 @@ public class sl extends Command {
                 } else
                     msgOwners.append(", ");
             }
-            if (s.getRole() == Role.ADMIN && !(vanished.contains(p))) {
-                msgAdmins.append(p.getName()).color(ChatColor.WHITE);
+            if (s.getRole() == Role.COOWNER && !(vanished.contains(p))) {
+                msgCoOwners.append(p.getName()).color(ChatColor.WHITE);
                 if(afk.contains(p)) {
-                    msgAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
-                    msgAdmins.append(", ").color(ChatColor.WHITE).italic(false);
+                    msgCoOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
+                    msgCoOwners.append(", ").color(ChatColor.WHITE).italic(false);
                 } else
-                    msgAdmins.append(", ");
+                    msgCoOwners.append(", ");
+            }
+            if (s.getRole() == Role.SRADMIN && !(vanished.contains(p))) {
+                msgSrAdmins.append(p.getName()).color(ChatColor.WHITE);
+                if(afk.contains(p)) {
+                    msgSrAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
+                    msgSrAdmins.append(", ").color(ChatColor.WHITE).italic(false);
+                } else
+                    msgSrAdmins.append(", ");
             }
             if (s.getRole() == Role.SRMOD && !(vanished.contains(p))) {
                 msgSrMods.append(p.getName()).color(ChatColor.WHITE);
