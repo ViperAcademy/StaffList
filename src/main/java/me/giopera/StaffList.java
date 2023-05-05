@@ -34,6 +34,16 @@ public final class StaffList extends Plugin {
         }
     }
 
+    public static boolean toggleLogin(ProxiedPlayer p){
+        if(onlineStaffers.contains(p)) {
+            //onlineStaffers.remove();
+            return false;
+        } else {
+            //onlineStaffers.add();
+            return true;
+        }
+    }
+
     public static LinkedList<ProxiedPlayer> getAfkPlayers(){
         return afkPlayers;
     }
