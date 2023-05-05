@@ -22,11 +22,7 @@ import me.giopera.Class.Staffer;
 
 public class sl extends Command {
 
-/*  public sl(String name, String permission, String... aliases) {
-        super("sl", "StaffList.use", "sl", "stafflist", "liststaff", "ls");
-    }
-*/
-    public sl() {
+public sl() {
         super("sl", "StaffList.use", "sl", "stafflist", "liststaff", "ls");
     }
 
@@ -51,13 +47,6 @@ public class sl extends Command {
         ComponentBuilder msgCapoBuilder = new ComponentBuilder("▪ Capo Builder ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgBuilders = new ComponentBuilder("▪ Builder ").color(ChatColor.BLUE).append("(").color(ChatColor.GRAY);
 
-        /*
-        ComponentBuilder msgOwners = new ComponentBuilder("");
-        ComponentBuilder msgAdmins = new ComponentBuilder("");
-        ComponentBuilder msgSrMods = new ComponentBuilder("");
-        ComponentBuilder msgMods = new ComponentBuilder("");
-        ComponentBuilder msgHelpers = new ComponentBuilder("");
-*/
         long owners = onlineStaffers.stream().filter(s -> Role.OWNER.equals(s.getRole())).count();
         long coOwners = onlineStaffers.stream().filter(s -> Role.COOWNER.equals(s.getRole())).count();
         long srAdmins = onlineStaffers.stream().filter(s -> Role.SRADMIN.equals(s.getRole())).count();
@@ -85,13 +74,6 @@ public class sl extends Command {
         msgHelpers.append(Long.toString(helpers)).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
         msgCapoBuilder.append(Long.toString(capoBuilder)).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
         msgBuilders.append(Long.toString(builder)).color(ChatColor.WHITE).append(") » ").color(ChatColor.GRAY);
-/*
-        msgOwners.append("» ").color(ChatColor.GRAY);
-        msgAdmins.append("» ").color(ChatColor.GRAY);
-        msgSrMods.append("» ").color(ChatColor.GRAY);
-        msgMods.append("» ").color(ChatColor.GRAY);
-        msgHelpers.append("» ").color(ChatColor.GRAY);
-*/
 
         for (Staffer s : onlineStaffers) {
             ProxiedPlayer p = s.getPlayer();
