@@ -16,11 +16,7 @@ public class onPlayerUnJoin implements Listener {
     @EventHandler
     public void onDisconnect(PlayerDisconnectEvent event) {
         ArrayList<Staffer> al = new ArrayList<>();
-        for (Staffer s : onlineStaffers) {
-            if(s.getPlayer().equals(event.getPlayer())){
-                onlineStaffers.remove(s);
-            }
-        }
+        onlineStaffers.removeIf(s -> s.getPlayer().equals(event.getPlayer()));
 
 /*
         onlineStaffers.remove(new Staffer(event.getPlayer(), Role.OWNER));
