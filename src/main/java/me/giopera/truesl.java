@@ -64,7 +64,7 @@ public class truesl extends Command {
 
         for (Staffer s : onlineStaffers) {
             ProxiedPlayer p = s.getPlayer();
-            if (s.getRole() == Role.OWNER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.OWNER) {
                 msgOwners.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -72,7 +72,7 @@ public class truesl extends Command {
                 } else
                     msgOwners.append(", ");
             }
-            if (s.getRole() == Role.COOWNER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.COOWNER) {
                 msgCoOwners.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgCoOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -80,7 +80,7 @@ public class truesl extends Command {
                 } else
                     msgCoOwners.append(", ");
             }
-            if (s.getRole() == Role.SRADMIN && !(vanished.contains(p))) {
+            if (s.getRole() == Role.SRADMIN) {
                 msgSrAdmins.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgSrAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -88,7 +88,7 @@ public class truesl extends Command {
                 } else
                     msgSrAdmins.append(", ");
             }
-            if (s.getRole() == Role.ADMINPLUS && !(vanished.contains(p))) {
+            if (s.getRole() == Role.ADMINPLUS) {
                 msgAdminsPlus.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgAdminsPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -96,7 +96,7 @@ public class truesl extends Command {
                 } else
                     msgAdminsPlus.append(", ");
             }
-            if (s.getRole() == Role.ADMIN && !(vanished.contains(p))) {
+            if (s.getRole() == Role.ADMIN) {
                 msgAdmins.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -104,7 +104,7 @@ public class truesl extends Command {
                 } else
                     msgAdmins.append(", ");
             }
-            if (s.getRole() == Role.CAPOSTAFF && !(vanished.contains(p))) {
+            if (s.getRole() == Role.CAPOSTAFF) {
                 msgCapoStaff.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgCapoStaff.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -112,7 +112,7 @@ public class truesl extends Command {
                 } else
                     msgCapoStaff.append(", ");
             }
-            if (s.getRole() == Role.SRMOD && !(vanished.contains(p))) {
+            if (s.getRole() == Role.SRMOD) {
                 msgSrMods.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgSrMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -120,7 +120,7 @@ public class truesl extends Command {
                 } else
                     msgSrMods.append(", ");
             }
-            if (s.getRole() == Role.MODPLUS && !(vanished.contains(p))) {
+            if (s.getRole() == Role.MODPLUS) {
                 msgModsPlus.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgModsPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -128,7 +128,7 @@ public class truesl extends Command {
                 } else
                     msgModsPlus.append(", ");
             }
-            if (s.getRole() == Role.MOD && !(vanished.contains(p))) {
+            if (s.getRole() == Role.MOD) {
                 msgMods.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -136,7 +136,7 @@ public class truesl extends Command {
                 } else
                     msgMods.append(", ");
             }
-            if (s.getRole() == Role.HELPERPLUS && !(vanished.contains(p))) {
+            if (s.getRole() == Role.HELPERPLUS) {
                 msgHelpersPlus.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgHelpersPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -144,7 +144,7 @@ public class truesl extends Command {
                 } else
                     msgHelpersPlus.append(", ");
             }
-            if (s.getRole() == Role.HELPER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.HELPER) {
                 msgHelpers.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgHelpers.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -152,7 +152,7 @@ public class truesl extends Command {
                 } else
                     msgHelpers.append(", ");
             }
-            if (s.getRole() == Role.CAPOBUILDER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.CAPOBUILDER) {
                 msgCapoBuilder.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgCapoBuilder.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -160,7 +160,7 @@ public class truesl extends Command {
                 } else
                     msgCapoBuilder.append(", ");
             }
-            if (s.getRole() == Role.BUILDER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.BUILDER) {
                 msgBuilders.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgBuilders.append(" [AFK]").color(ChatColor.GRAY).italic(true);
