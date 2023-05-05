@@ -183,17 +183,17 @@ public sl() {
             }
         }
         msgOwners.removeComponent(msgOwners.getCursor());
-        msgSrAdmins.removeComponent(msgAdmins.getCursor());
-        msgAdminsPlus.removeComponent(msgAdmins.getCursor());
+        msgSrAdmins.removeComponent(msgSrAdmins.getCursor());
+        msgAdminsPlus.removeComponent(msgAdminsPlus.getCursor());
         msgAdmins.removeComponent(msgAdmins.getCursor());
-        msgCapoStaff.removeComponent(msgAdmins.getCursor());
+        msgCapoStaff.removeComponent(msgCapoStaff.getCursor());
         msgSrMods.removeComponent(msgSrMods.getCursor());
-        msgModsPlus.removeComponent(msgAdmins.getCursor());
+        msgModsPlus.removeComponent(msgModsPlus.getCursor());
         msgMods.removeComponent(msgMods.getCursor());
-        msgHelpersPlus.removeComponent(msgAdmins.getCursor());
+        msgHelpersPlus.removeComponent(msgHelpersPlus.getCursor());
         msgHelpers.removeComponent(msgHelpers.getCursor());
-        msgCapoBuilder.removeComponent(msgAdmins.getCursor());
-        msgBuilders.removeComponent(msgAdmins.getCursor());
+        msgCapoBuilder.removeComponent(msgCapoBuilder.getCursor());
+        msgBuilders.removeComponent(msgBuilders.getCursor());
 
         ComponentBuilder init = new ComponentBuilder("Staffers Online: ").color(ChatColor.GOLD).bold(true).append("(( Online: ").color(ChatColor.GRAY).italic(true).bold(false).append(Long.toString(owners+admins+srMods+mods+helpers)).color(ChatColor.WHITE).italic(true).append(" ))").color(ChatColor.GRAY).italic(true);
         boolean isThereAnybodyOnline = owners == 0 && srAdmins == 0 && adminsPlus == 0 && admins == 0 && capoStaff == 0 && srMods == 0 && modsPlus == 0 && mods == 0 && helpersPlus == 0 && helpers == 0 && capoBuilder == 0 && builder == 0;
