@@ -42,7 +42,7 @@ public sl() {
         ComponentBuilder msgSrMods = new ComponentBuilder("▪ Sr. Mod ").color(ChatColor.DARK_GREEN).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgModsPlus = new ComponentBuilder("▪ Mod+ ").color(ChatColor.of("#42c742")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgMods = new ComponentBuilder("▪ Mod ").color(ChatColor.GREEN).append("(").color(ChatColor.GRAY);
-        ComponentBuilder msgHelpersPlus = new ComponentBuilder("▪ Helper+ ").color(ChatColor.of("#8080ff")).append("(").color(ChatColor.GRAY);
+        ComponentBuilder msgHelpersPlus = new ComponentBuilder("▪ Helper+ ").color(ChatColor.of("#7575fa")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgHelpers = new ComponentBuilder("▪ Helper ").color(ChatColor.of("#4f4fc9")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgCapoBuilder = new ComponentBuilder("▪ Capo Builder ").color(ChatColor.of("#7d00d1")).append("(").color(ChatColor.GRAY);
         ComponentBuilder msgBuilders = new ComponentBuilder("▪ Builder ").color(ChatColor.of("#a000d1")).append("(").color(ChatColor.GRAY);
