@@ -1,4 +1,4 @@
-package me.giopera;
+package me.giopera.Commands;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;

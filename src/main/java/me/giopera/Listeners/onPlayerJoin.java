@@ -1,4 +1,4 @@
-package me.giopera;
+package me.giopera.Listeners;
 
 import me.giopera.Class.Role;
 import me.giopera.Class.Staffer;

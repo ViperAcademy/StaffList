@@ -1,4 +1,4 @@
-package me.giopera;
+package me.giopera.Listeners;
 
 import me.giopera.Class.Role;
 import me.giopera.Class.Staffer;
@@ -15,7 +15,6 @@ import static me.giopera.StaffList.onlineStaffers;
 public class onPlayerUnJoin implements Listener {
     @EventHandler
     public void onDisconnect(PlayerDisconnectEvent event) {
-        ArrayList<Staffer> al = new ArrayList<>();
         onlineStaffers.removeIf(s -> s.getPlayer().equals(event.getPlayer()));
     }
 }

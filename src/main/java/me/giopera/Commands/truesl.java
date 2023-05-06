@@ -1,4 +1,4 @@
-package me.giopera;
+package me.giopera.Commands;
 
 import me.giopera.Class.Role;
 import me.giopera.Class.Staffer;
