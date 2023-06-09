@@ -5,12 +5,15 @@ import me.giopera.Class.Staffer;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
+import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.hover.content.Text;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
+import java.awt.*;
 import java.util.List;
-
 import static me.giopera.StaffList.*;
 
 public class truesl extends Command {
@@ -65,7 +68,7 @@ public class truesl extends Command {
         for (Staffer s : onlineStaffers) {
             ProxiedPlayer p = s.getPlayer();
             if (s.getRole() == Role.OWNER) {
-                msgOwners.append(p.getName()).color(ChatColor.WHITE);
+                msgOwners.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgOwners.append(", ").color(ChatColor.WHITE).italic(false);
@@ -73,7 +76,7 @@ public class truesl extends Command {
                     msgOwners.append(", ");
             }
             if (s.getRole() == Role.COOWNER) {
-                msgCoOwners.append(p.getName()).color(ChatColor.WHITE);
+                msgCoOwners.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgCoOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgCoOwners.append(", ").color(ChatColor.WHITE).italic(false);
@@ -81,7 +84,7 @@ public class truesl extends Command {
                     msgCoOwners.append(", ");
             }
             if (s.getRole() == Role.SRADMIN) {
-                msgSrAdmins.append(p.getName()).color(ChatColor.WHITE).append(" (" + p.getServer().getServerInfo().getName() + ")").color(ChatColor.GRAY).color(ChatColor.ITALIC);
+                msgSrAdmins.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgSrAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgSrAdmins.append(", ").color(ChatColor.WHITE).italic(false);
@@ -89,7 +92,7 @@ public class truesl extends Command {
                     msgSrAdmins.append(", ");
             }
             if (s.getRole() == Role.ADMINPLUS) {
-                msgAdminsPlus.append(p.getName()).color(ChatColor.WHITE);
+                msgAdminsPlus.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgAdminsPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgAdminsPlus.append(", ").color(ChatColor.WHITE).italic(false);
@@ -97,7 +100,7 @@ public class truesl extends Command {
                     msgAdminsPlus.append(", ");
             }
             if (s.getRole() == Role.ADMIN) {
-                msgAdmins.append(p.getName()).color(ChatColor.WHITE);
+                msgAdmins.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgAdmins.append(", ").color(ChatColor.WHITE).italic(false);
@@ -105,7 +108,7 @@ public class truesl extends Command {
                     msgAdmins.append(", ");
             }
             if (s.getRole() == Role.CAPOSTAFF) {
-                msgCapoStaff.append(p.getName()).color(ChatColor.WHITE);
+                msgCapoStaff.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgCapoStaff.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgCapoStaff.append(", ").color(ChatColor.WHITE).italic(false);
@@ -113,7 +116,7 @@ public class truesl extends Command {
                     msgCapoStaff.append(", ");
             }
             if (s.getRole() == Role.SRMOD) {
-                msgSrMods.append(p.getName()).color(ChatColor.WHITE);
+                msgSrMods.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgSrMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgSrMods.append(", ").color(ChatColor.WHITE).italic(false);
@@ -121,7 +124,7 @@ public class truesl extends Command {
                     msgSrMods.append(", ");
             }
             if (s.getRole() == Role.MODPLUS) {
-                msgModsPlus.append(p.getName()).color(ChatColor.WHITE);
+                msgModsPlus.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgModsPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgModsPlus.append(", ").color(ChatColor.WHITE).italic(false);
@@ -129,7 +132,7 @@ public class truesl extends Command {
                     msgModsPlus.append(", ");
             }
             if (s.getRole() == Role.MOD) {
-                msgMods.append(p.getName()).color(ChatColor.WHITE);
+                msgMods.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgMods.append(", ").color(ChatColor.WHITE).italic(false);
@@ -137,7 +140,7 @@ public class truesl extends Command {
                     msgMods.append(", ");
             }
             if (s.getRole() == Role.HELPERPLUS) {
-                msgHelpersPlus.append(p.getName()).color(ChatColor.WHITE);
+                msgHelpersPlus.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgHelpersPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgHelpersPlus.append(", ").color(ChatColor.WHITE).italic(false);
@@ -145,7 +148,7 @@ public class truesl extends Command {
                     msgHelpersPlus.append(", ");
             }
             if (s.getRole() == Role.HELPER) {
-                msgHelpers.append(p.getName()).color(ChatColor.WHITE);
+                msgHelpers.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgHelpers.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgHelpers.append(", ").color(ChatColor.WHITE).italic(false);
@@ -153,7 +156,7 @@ public class truesl extends Command {
                     msgHelpers.append(", ");
             }
             if (s.getRole() == Role.CAPOBUILDER) {
-                msgCapoBuilder.append(p.getName()).color(ChatColor.WHITE);
+                msgCapoBuilder.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgCapoBuilder.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgCapoBuilder.append(", ").color(ChatColor.WHITE).italic(false);
@@ -161,7 +164,7 @@ public class truesl extends Command {
                     msgCapoBuilder.append(", ");
             }
             if (s.getRole() == Role.BUILDER) {
-                msgBuilders.append(p.getName()).color(ChatColor.WHITE);
+                msgBuilders.append(p.getName()).color(ChatColor.WHITE).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, getPlayerInfo(p)));
                 if(afkPlayers.contains(p)) {
                     msgBuilders.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgBuilders.append(", ").color(ChatColor.WHITE).italic(false);
@@ -218,6 +221,23 @@ public class truesl extends Command {
             ComponentBuilder noStaff = new ComponentBuilder("Attualmente non ci sono staffers online").color(ChatColor.RED);
             commandSender.sendMessage(noStaff.create());
         }
+    }
+
+    public static Text getPlayerInfo (ProxiedPlayer p){
+        Text msg = new Text("Info di " + p.getName() + "\n" +
+                "Nome: " + p.getName() + "\n" +
+                "Nome Mostrato: " + p.getDisplayName() + "\n" +
+                "Chat (Nascosta/In Mostra): " + ((p.getChatMode() == ProxiedPlayer.ChatMode.SHOWN || p.getChatMode() == ProxiedPlayer.ChatMode.COMMANDS_ONLY) ? "Mostrata" : "Nascosta") + "\n" +
+                "Paese: " + p.getLocale().getCountry() + "\n" +
+                "Nome Mostrato: " + p.getDisplayName() + "\n" +
+                "Mano Principale: " + ((p.getMainHand() == ProxiedPlayer.MainHand.LEFT) ? "Sinistra" : "Destra") + "\n" +
+                "Ping: " + p.getPing() + "\n" +
+                "Server: " + p.getServer().getInfo().getName() + "\n" +
+                "UUID: " + p.getUniqueId().toString() + "\n" +
+                "View Distance: " + p.getViewDistance() + "\n" +
+                "Colori chat: " + p.hasChatColors() + "\n" +
+                "Forge: " + p.isForgeUser());
+        return msg;
     }
 }
 

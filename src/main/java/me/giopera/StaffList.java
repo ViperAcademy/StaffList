@@ -13,16 +13,16 @@ import java.util.LinkedList;
 
 public final class StaffList extends Plugin {
 
-    public static LinkedList<ProxiedPlayer> vanished = new LinkedList<>();
+    public static LinkedList<ProxiedPlayer> vanishedPlayers = new LinkedList<>();
     public static LinkedList<ProxiedPlayer> afkPlayers = new LinkedList<>();
     public static ArrayList<Staffer> onlineStaffers = new ArrayList<>();
 
     public static boolean toggleVanish(ProxiedPlayer p){
-        if(vanished.contains(p)) {
-            vanished.remove(p);
+        if(vanishedPlayers.contains(p)) {
+            vanishedPlayers.remove(p);
             return false;
         } else {
-            vanished.add(p);
+            vanishedPlayers.add(p);
             return true;
         }
     }
@@ -42,7 +42,7 @@ public final class StaffList extends Plugin {
         return afkPlayers;
     }
     public static LinkedList<ProxiedPlayer> getVanishedPlayers(){
-        return vanished;
+        return vanishedPlayers;
     }
 
     @Override

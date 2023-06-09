@@ -1,18 +1,13 @@
 package me.giopera.Commands;
 
 
-import java.util.LinkedList;
-import java.util.List;
-
-
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
-import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
-import static me.giopera.StaffList.vanished;
+import static me.giopera.StaffList.vanishedPlayers;
 import static me.giopera.StaffList.afkPlayers;
 import static me.giopera.StaffList.onlineStaffers;
 
@@ -77,7 +72,7 @@ public sl() {
 
         for (Staffer s : onlineStaffers) {
             ProxiedPlayer p = s.getPlayer();
-            if (s.getRole() == Role.OWNER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.OWNER && !(vanishedPlayers.contains(p))) {
                 msgOwners.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -85,7 +80,7 @@ public sl() {
                 } else
                     msgOwners.append(", ");
             }
-            if (s.getRole() == Role.COOWNER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.COOWNER && !(vanishedPlayers.contains(p))) {
                 msgCoOwners.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgCoOwners.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -93,7 +88,7 @@ public sl() {
                 } else
                     msgCoOwners.append(", ");
             }
-            if (s.getRole() == Role.SRADMIN && !(vanished.contains(p))) {
+            if (s.getRole() == Role.SRADMIN && !(vanishedPlayers.contains(p))) {
                 msgSrAdmins.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgSrAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -101,7 +96,7 @@ public sl() {
                 } else
                     msgSrAdmins.append(", ");
             }
-            if (s.getRole() == Role.ADMINPLUS && !(vanished.contains(p))) {
+            if (s.getRole() == Role.ADMINPLUS && !(vanishedPlayers.contains(p))) {
                 msgAdminsPlus.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgAdminsPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -109,7 +104,7 @@ public sl() {
                 } else
                     msgAdminsPlus.append(", ");
             }
-            if (s.getRole() == Role.ADMIN && !(vanished.contains(p))) {
+            if (s.getRole() == Role.ADMIN && !(vanishedPlayers.contains(p))) {
                 msgAdmins.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -117,7 +112,7 @@ public sl() {
                 } else
                     msgAdmins.append(", ");
             }
-            if (s.getRole() == Role.CAPOSTAFF && !(vanished.contains(p))) {
+            if (s.getRole() == Role.CAPOSTAFF && !(vanishedPlayers.contains(p))) {
                 msgCapoStaff.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgCapoStaff.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -125,7 +120,7 @@ public sl() {
                 } else
                     msgCapoStaff.append(", ");
             }
-            if (s.getRole() == Role.SRMOD && !(vanished.contains(p))) {
+            if (s.getRole() == Role.SRMOD && !(vanishedPlayers.contains(p))) {
                 msgSrMods.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgSrMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -133,7 +128,7 @@ public sl() {
                 } else
                     msgSrMods.append(", ");
             }
-            if (s.getRole() == Role.MODPLUS && !(vanished.contains(p))) {
+            if (s.getRole() == Role.MODPLUS && !(vanishedPlayers.contains(p))) {
                 msgModsPlus.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgModsPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -141,7 +136,7 @@ public sl() {
                 } else
                     msgModsPlus.append(", ");
             }
-            if (s.getRole() == Role.MOD && !(vanished.contains(p))) {
+            if (s.getRole() == Role.MOD && !(vanishedPlayers.contains(p))) {
                 msgMods.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgMods.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -149,7 +144,7 @@ public sl() {
                 } else
                     msgMods.append(", ");
             }
-            if (s.getRole() == Role.HELPERPLUS && !(vanished.contains(p))) {
+            if (s.getRole() == Role.HELPERPLUS && !(vanishedPlayers.contains(p))) {
                 msgHelpersPlus.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgHelpersPlus.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -157,7 +152,7 @@ public sl() {
                 } else
                     msgHelpersPlus.append(", ");
             }
-            if (s.getRole() == Role.HELPER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.HELPER && !(vanishedPlayers.contains(p))) {
                 msgHelpers.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgHelpers.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -165,7 +160,7 @@ public sl() {
                 } else
                     msgHelpers.append(", ");
             }
-            if (s.getRole() == Role.CAPOBUILDER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.CAPOBUILDER && !(vanishedPlayers.contains(p))) {
                 msgCapoBuilder.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgCapoBuilder.append(" [AFK]").color(ChatColor.GRAY).italic(true);
@@ -173,7 +168,7 @@ public sl() {
                 } else
                     msgCapoBuilder.append(", ");
             }
-            if (s.getRole() == Role.BUILDER && !(vanished.contains(p))) {
+            if (s.getRole() == Role.BUILDER && !(vanishedPlayers.contains(p))) {
                 msgBuilders.append(p.getName()).color(ChatColor.WHITE);
                 if(afkPlayers.contains(p)) {
                     msgBuilders.append(" [AFK]").color(ChatColor.GRAY).italic(true);

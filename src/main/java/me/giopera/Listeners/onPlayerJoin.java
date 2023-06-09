@@ -2,16 +2,12 @@ package me.giopera.Listeners;
 
 import me.giopera.Class.Role;
 import me.giopera.Class.Staffer;
-import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
-import net.md_5.bungee.api.event.PlayerHandshakeEvent;
 import net.md_5.bungee.api.event.ServerConnectEvent;
-import net.md_5.bungee.api.event.ServerDisconnectEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
 import static me.giopera.StaffList.*;
-import static me.giopera.StaffList.vanished;
 
 public class onPlayerJoin implements Listener {
     @EventHandler
