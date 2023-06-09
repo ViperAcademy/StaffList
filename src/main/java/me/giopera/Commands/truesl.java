@@ -15,7 +15,7 @@ import static me.giopera.StaffList.*;
 
 public class truesl extends Command {
     public truesl() {
-        super("truesl", "stafflist.true", "slt");
+        super("truesl", "stafflist.seeall", "slt");
     }
 
     @Override
@@ -81,7 +81,7 @@ public class truesl extends Command {
                     msgCoOwners.append(", ");
             }
             if (s.getRole() == Role.SRADMIN) {
-                msgSrAdmins.append(p.getName()).color(ChatColor.WHITE);
+                msgSrAdmins.append(p.getName()).color(ChatColor.WHITE).append(" (" + p.getServer().getServerInfo().getName() + ")").color(ChatColor.GRAY).color(ChatColor.ITALIC);
                 if(afkPlayers.contains(p)) {
                     msgSrAdmins.append(" [AFK]").color(ChatColor.GRAY).italic(true);
                     msgSrAdmins.append(", ").color(ChatColor.WHITE).italic(false);
